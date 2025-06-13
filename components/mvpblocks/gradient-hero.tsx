@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GradientHero() {
   return (
@@ -67,14 +68,17 @@ export default function GradientHero() {
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Button
+              asChild
               size="lg"
               className="group relative overflow-hidden rounded-full bg-primary px-6 text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-primary/30"
             >
-              <span className="relative z-10 flex items-center">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-              <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              <Link href="/signin">
+                <span className="relative z-10 flex items-center">
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              </Link>
             </Button>
 
             <Button
@@ -82,8 +86,13 @@ export default function GradientHero() {
               size="lg"
               className="flex items-center gap-2 rounded-full border-border bg-background/50 backdrop-blur-sm"
             >
-              <Github className="h-4 w-4" />
-              Star on GitHub
+              <Link
+                className="flex items-center gap-2 rounded-full border-border bg-background/50 backdrop-blur-sm"
+                href="/signin"
+              >
+                <Github className="h-4 w-4" />
+                Star on GitHub
+              </Link>
             </Button>
           </motion.div>
 

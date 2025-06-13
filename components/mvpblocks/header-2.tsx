@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, CodeXml } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ModeToggle } from "../toggleTheme";
+import Logo from "../Logo";
 
 interface NavItem {
   name: string;
@@ -88,29 +89,7 @@ export default function Header2() {
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <motion.div
-              className="flex items-center space-x-3"
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              <Link href="/" className="flex items-center space-x-3">
-                <div className="relative">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 via-rose-600 to-rose-700 shadow-lg">
-                    <CodeXml className="h-5 w-5 text-white" />
-                  </div>
-                  <div className="absolute -right-1 -top-1 h-3 w-3 animate-pulse rounded-full bg-green-400"></div>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-bold text-foreground">
-                    Codiny
-                  </span>
-                  <span className="-mt-1 text-xs text-muted-foreground">
-                    Reviews and Refactoring
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
+            <Logo />
 
             <nav className="hidden items-center space-x-1 lg:flex">
               {navItems.map((item) => (
@@ -152,7 +131,7 @@ export default function Header2() {
               <ModeToggle />
 
               <Link
-                href="/login"
+                href="/signin"
                 className="px-4 py-2 text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-foreground"
               >
                 Sign In
@@ -163,7 +142,7 @@ export default function Header2() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Link
-                  href="/signup"
+                  href="/signin"
                   className="inline-flex items-center space-x-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-sm transition-all duration-200 hover:bg-foreground/90"
                 >
                   <span>Get Started</span>
