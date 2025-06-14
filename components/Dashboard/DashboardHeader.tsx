@@ -247,44 +247,31 @@ const DashboardHeader = ({
 
           {/* User Dropdown */}
         <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                {/* Mobile version (avatar only) */}
-                <Button
-                    variant="ghost"
-                    className="relative h-10 w-10 rounded-full sm:hidden"
-                    aria-label="User menu"
-                >
-                    <Avatar className="h-9 w-9 border border-primary/50">
-                        <AvatarImage src={user.image} alt={user.name} />
-                        <AvatarFallback className="text-sm">{userInitials}</AvatarFallback>
-                    </Avatar>
-                </Button>
-            </DropdownMenuTrigger>
 
             {/* Desktop version (with name and email) */}
             <DropdownMenuTrigger asChild>
                 <Button
-                    variant="ghost"
-                    className="relative hidden h-11 max-w-[200px] pl-2 pr-4 rounded-full items-center gap-3 shadow-md hover:bg-accent transition-all sm:flex"
-                    aria-label="User menu"
+                  variant="ghost"
+                  className="relative h-11 max-w-[200px] pl-2 pr-4 rounded-full items-center gap-3 shadow-md hover:bg-accent transition-all sm:flex"
+                  aria-label="User menu"
                 >
-                    <Avatar className="h-9 w-9 border-2 border-primary/50 shadow">
-                        <AvatarImage src={user.image} alt={user.name} />
-                        <AvatarFallback className="text-base font-semibold">
-                            {userInitials}
-                        </AvatarFallback>
-                    </Avatar>
-                    <div className="flex flex-col items-start justify-center">
-                        <span className="text-sm font-semibold leading-tight truncate max-w-[110px]">
-                            {user.name}
-                        </span>
-                        <span className="text-xs text-muted-foreground leading-tight truncate max-w-[110px]">
-                            {user.email}
-                        </span>
-                    </div>
-                    <span className="ml-auto">
-                        <MoreHorizontal className="h-5 w-5 text-muted-foreground" />
+                  <Avatar className="h-9 w-9 border-2 border-primary/50 shadow">
+                    <AvatarImage src={user.image} alt={user.name} />
+                    <AvatarFallback className="text-base font-semibold">
+                      {userInitials}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="md:flex flex-col items-start justify-center hidden sm:flex">
+                    <span className="text-sm font-semibold leading-tight truncate max-w-[110px]">
+                      {user.name}
                     </span>
+                    <span className="text-xs text-muted-foreground leading-tight truncate max-w-[110px]">
+                      {user.email}
+                    </span>
+                  </div>
+                  <span className="ml-auto">
+                    <MoreHorizontal className="h-5 w-5 text-muted-foreground" />
+                  </span>
                 </Button>
             </DropdownMenuTrigger>
             
