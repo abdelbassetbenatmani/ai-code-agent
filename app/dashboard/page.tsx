@@ -1,12 +1,11 @@
-import DashboardHeader from '@/components/Dashboard/DashboardHeader'
-
+import DashboardHeader from "@/components/Dashboard/Header/DashboardHeader";
 
 const DashboardPage = () => {
   return (
     <div>
-        <DashboardHeader />
+      <DashboardHeader />
     </div>
-  )
-}
+  );
+};
 
-export default DashboardPage
+export default DashboardPage;
